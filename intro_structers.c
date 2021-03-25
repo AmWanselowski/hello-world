@@ -7,7 +7,7 @@ struct Person{
     int grade;
 };
 
-void Print_struct(struct Person People[]);
+//void Print_struct(struct Person People[]);
 
 int main(){
 
@@ -20,8 +20,10 @@ int main(){
 
     int max_age = 0;
 
-Print_struct(struct Person People[]);
-
+//Print_struct(struct Person People[]);
+    for(int i = 0; i < (sizeof(People)/sizeof(People[0])); i++){
+        printf("Name: %s \t| \tAge: %d \t| \tGrade: %d \n",People[i].name,People[i].age, People[i].grade);
+    }
 
     for(int i = 0; i < (sizeof(People)/sizeof(People[0])); i++){
         if(People[i].age > max_age)
@@ -33,8 +35,5 @@ Print_struct(struct Person People[]);
     return 0;
 }
 
-void Print_struct(struct Person People[]){
-        for(int i = 0; i < (sizeof(People)/sizeof(People[0])); i++){
-        printf("Name: %s \t| \tAge: %d \t| \tGrade: %d \n",People[i].name,People[i].age, People[i].grade);
-    }
-}
+/*void Print_struct(struct Person People[]){
+      */
